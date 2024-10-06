@@ -1,3 +1,15 @@
+<?php
+include'../inc_db/db.php';
+// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+session_start();
+if($_SESSION['isAdmin']==1){
+echo '';
+}
+else
+header("Location:admin_login.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +18,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -25,7 +37,8 @@
         background-color: dimgrey;
       }
 
-      
+      /* هذا يجعل ال خلفيه سوداء */
+      /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
       .navbar-brand {
         color: aliceblue;
       }
@@ -39,7 +52,7 @@
       }
 
       body {
-        background-color: rgb(194, 216, 202);
+        background-color: #D3D3D3;
       }
 
       .col-lg-4 {
@@ -48,7 +61,9 @@
       }
 
       .col-lg-4 img {
-       
+        /* لاحظ ان الصوره داخل كلاس 
+        .col-lg-4 
+        لذا اضفنا img */
         background-color: #d4a8d4;
         width: 80%;
         height: auto;
@@ -68,19 +83,27 @@
         height: 250px;
         background-color: dimgrey;
         margin-bottom: 0px;
-        margin-top: 90px;
+        margin-top: 350px;
       }
       .form-text.text-muted {
-  color: #fbf6f6 !important;
+        color: #fbf6f6 !important;
       }
-
-      .col-lg-6.col-sm-6{
+      /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+      .col-lg-6.col-sm-6 {
         float: right;
-
+        /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
       }
-      
+      .exam{
+        direction: rtl !important;
+        /* لماذا لا يتم تنفيز الامر */
+      }
+      .navbar-toggler{
+        background-color: rgb(246, 242, 236) !important;
+      }
     </style>
   </head>
+  <!-- <body dir="rtl"> -->
+  <!-- dir=rtl تجعل الصفحه تبدا من اليمين -->
 
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" dir="rtl">
@@ -106,6 +129,11 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
                 >الرئيسية</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="logout.php"
+                >تسجيل الخروج</a
               >
             </li>
             <li class="nav-item dropdown">
@@ -142,116 +170,47 @@
       </div>
     </nav>
     <div class="container">
+      <!-- هذا الكونتاينير يمثل الصفحه الاساسيه لا تنسي ان الصفحه مقسمه ل 12 عمود -->
       <div class="row">
+        <div class="col-lg-12 col-md-12">
+        <table class="table" dir="rtl">
+            <tr>
+                <td>رقم الاستفسار </td>
+                <td>رقم المستفسر</td>
+                <td>الاستفسار</td>
+                <td>الاجابه</td>
+                <td></td>
+            </tr>
+            <?php 
+            $x='select * from contactus';
+            $y=mysqli_query($connection,$x);
+            while($z=mysqli_fetch_assoc($y)){
+                echo'
+                <tr>
+                <td>'.$z['id'].'</td>
+                <td>'.$z['user_id'].'</td>
+                <td>'.$z['ask'].'</td>
+                <td>'.$z['unser'].'</td>
+                ';
+                ?>
+                <td>
+                <a type="button" href="ans.php?id=<?php echo $z['id']; ?>" class="btn btn-primary">اجب</a>
 
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-      </div>
-      <div class="row">
+                </td>
+                <?php
+               echo '</tr>';
+                
+            }
+            ?>
+        </table> 
 
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-      </div>
-      <div class="row">
 
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="moaz">
-            <center><img src="image/c1.jpg" alt="" /></center>
-            <hr />
-            <center>
-              <button type="button" class="btn btn-danger">
-                مواصفات الهاتف
-              </button>
-            </center>
-          </div>
         </div>
       </div>
     </div>
 
+    <!-- كلك شمال + فورمات دوكيومن +  prettier   لتنظيم الكود-->
+    <!-- اضافه جديده تريك كود سيسس عن طريق الضغط علي كنترول ثم الاسم الخاص بالكلاس -->
     <footer class="footer">
       <div class="col-lg-6 col-sm-6">
         <form>
@@ -265,7 +224,8 @@
               placeholder="Enter email"
             />
             <small id="emailHelp" class="form-text text-muted"
-              >لن نشارك المعلومات مع احد</small>
+              >لن نشارك المعلومات مع احد</small
+            >
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">كلمه المرور</label>
@@ -276,11 +236,20 @@
               placeholder="Password"
             />
           </div>
-         
+
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-      <div class="col-lg-6 col-sm-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13649.692362050884!2d30.031121049999992!3d31.2090057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5db1829f34347%3A0x5fb8e5808543cac0!2z2YLYtdixINiv2YfYqCDZhNmE2K3ZgdmE2KfYqg!5e0!3m2!1sar!2seg!4v1721738570180!5m2!1sar!2seg" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="col-lg-6 col-sm-6">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13649.692362050884!2d30.031121049999992!3d31.2090057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5db1829f34347%3A0x5fb8e5808543cac0!2z2YLYtdixINiv2YfYqCDZhNmE2K3ZgdmE2KfYqg!5e0!3m2!1sar!2seg!4v1721738570180!5m2!1sar!2seg"
+          width="400"
+          height="250"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </footer>
   </body>
