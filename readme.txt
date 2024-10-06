@@ -52,3 +52,5 @@ Password: 123admin
 
 ## Summary
 This project serves as a good starting point for creating a complete smart device store website. You can use it as a foundation and expand it by adding more features and functionalities.
+##linkedin
+https://www.linkedin.com/posts/moaz-amr-284361263_webdevelopment-ecommerce-techproject-activity-7248755162234667008--XnC?utm_source=share&utm_medium=member_desktop
