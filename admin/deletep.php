@@ -1,11 +1,11 @@
 <?php
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 session_start();
 if($_SESSION['isAdmin']==1){
   
   include'../inc_db/db.php';
-  // هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
   
   $id=(int) $_GET ['id' ] ;
   $sql="delete from items where id='$id'";

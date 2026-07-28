@@ -1,6 +1,6 @@
 <?php
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 session_start();
 if($_SESSION['isAdmin']==1){
     include '../inc_db/db.php';
@@ -42,8 +42,8 @@ header("Location:admin_login.php");
             background-color: dimgrey;
         }
 
-        /* هذا يجعل ال خلفيه سوداء */
-        /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
+
+
         .navbar-brand {
             color: aliceblue;
         }
@@ -62,13 +62,11 @@ header("Location:admin_login.php");
 
         .col-lg-4 {
             margin-top: 20px;
-            /* float:right; */
+
         }
 
         .col-lg-4 img {
-            /* لاحظ ان الصوره داخل كلاس 
-        .col-lg-4 
-        لذا اضفنا img */
+
             background-color: #d4a8d4;
             width: 80%;
             height: auto;
@@ -98,16 +96,16 @@ header("Location:admin_login.php");
             color: #fbf6f6 !important;
         }
 
-        /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+
         .col-lg-6.col-sm-6 {
             float: right;
-            /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
+
         }
 
         .exam {
             direction: rtl;
             text-align: right;
-            /* لضبط محاذاة النص إلى اليمين */
+
         }
 
         .navbar-toggler {
@@ -244,8 +242,8 @@ header("Location:admin_login.php");
 
 
                             $sqll = "insert into items(name,price,descrp,img,category)values('$name','$price','$descrp','$filetoupload','$cat')";
-                            //   $sql="update items set name='$name',price='$price',descrp='$descrp',category='
-                            // يمكن استعمال جمله  update لتعديل البيانات في الجدول items بدل من حذف  البيانات واضافة جديدة 
+
+
 
 
                             $resultl = mysqli_query($connection, $sqll);
@@ -267,7 +265,7 @@ header("Location:admin_login.php");
                             echo '<script>window.location.replace("deletep.php?id=' . $row['id'] . '");</script>';
                         }
                     }
-                    // هذا الكود هو المسءول عن رفع المنتجات للداتا بيذ و مشروح في مجلد php علي نوت شيلف
+
                     ?>
                 </form>
             </div>

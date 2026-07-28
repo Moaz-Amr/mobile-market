@@ -1,7 +1,7 @@
 <?php
 session_start();
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +31,8 @@ include'../inc_db/db.php';
         background-color: dimgrey;
       }
 
-      /* هذا يجعل ال خلفيه سوداء */
-      /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
+
+
       .navbar-brand {
         color: aliceblue;
       }
@@ -51,13 +51,11 @@ include'../inc_db/db.php';
 
       .col-lg-4 {
         margin-top: 20px;
-        /* float:right; */
+
       }
 
       .col-lg-4 img {
-        /* لاحظ ان الصوره داخل كلاس 
-        .col-lg-4 
-        لذا اضفنا img */
+
         background-color: #d4a8d4;
         width: 80%;
         height: auto;
@@ -82,14 +80,14 @@ include'../inc_db/db.php';
       .form-text.text-muted {
         color: #fbf6f6 !important;
       }
-      /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+
       .col-lg-6.col-sm-6 {
         float: right;
-        /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
+
       }
       .exam{
         direction: rtl !important;
-        /* لماذا لا يتم تنفيز الامر */
+
       }
       .navbar-toggler{
         background-color: rgb(246, 242, 236) !important;
@@ -207,10 +205,10 @@ include'../inc_db/db.php';
                   $pass2=$_POST['password1'];    
                   if($pass1===$pass2){  
                     $sqll="insert into users(fullname,email,username,password)values('$pname','$email','$user','$pass1')";
-                    // يسرس هو اسم الجدول و المدخلات الاولي هي عواميد الجدول والثانيه هي المتغيرات المقابله لهذه العواميد
+
                     $resultl=mysqli_query($connection,$sqll);
                     if($resultl){
-                      // echo"تمت عمليه التسجيل بنجاح";
+
                       $_SESSION['user']=$user;
                       echo '<script>window.location.replace("welcome.php");</script>';
                     }
@@ -221,12 +219,12 @@ include'../inc_db/db.php';
                 
                 }
                 catch (mysqli_sql_exception $e) {
-                  // التحقق من نوع الخطأ
+
                   if ($e->getCode() == 1062) {
-                      // 1062 هو كود خطأ MySQL لـ Duplicate Entry
+
                       echo "عذرًا، اسم المستخدم '{$user}' مستخدم بالفعل. الرجاء اختيار اسم مستخدم آخر.";
                   } else {
-                      // للأخطاء الأخرى
+
                       echo "حدث خطأ أثناء التسجيل. الرجاء المحاولة مرة أخرى لاحقًا.";
                   }
               }
