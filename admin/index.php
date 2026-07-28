@@ -1,4 +1,11 @@
 <?php
+/**
+ * لوحة تحكم الإدارة (الرئيسية).
+ *
+ * تتيح لمدير النظام (Admin) إدارة الهواتف والمنتجات المعروضة،
+ * بالإضافة إلى إمكانية الرد على استفسارات العملاء.
+ */
+
 include'../inc_db/db.php';
 
 session_start();
@@ -13,8 +20,8 @@ header("Location:admin_login.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- هذه الصفحه لاختبار ان جافا سكريبت تعمل مع سيسس ويجب ان تكون الاكواد التاليه بنفس الترتيب  -->
-    <!-- اولا اخذت مافات بوتستراب وحطتها في المشروع ثم نسخت نص الجاكواري وعملت ملف داخل مجلد جافاسكربت اسمه جاكواريدوت مين دوت جي اس ثم عملت هذا الملف للاختبار ثم رجعت لصفحه بوت ستراب لاخذ منها الاكواد -->
+
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -91,8 +98,8 @@ header("Location:admin_login.php");
 
     </style>
   </head>
-  <!-- <body dir="rtl"> -->
-  <!-- dir=rtl تجعل الصفحه تبدا من اليمين -->
+
+
 
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" dir="rtl">
@@ -159,7 +166,7 @@ header("Location:admin_login.php");
       </div>
     </nav>
     <div class="container">
-      <!-- هذا الكونتاينير يمثل الصفحه الاساسيه لا تنسي ان الصفحه مقسمه ل 12 عمود -->
+
       <div class="row">
         <div class="col-lg-12 col-md-12">
         <a href="addmop.php" class="btn btn-primary btn-block" role="button">اضف هاتف جديد</a>

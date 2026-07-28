@@ -7,8 +7,8 @@ include '../inc_db/db.php';
 <html lang="en">
 
 <head>
-  <!-- هذه الصفحه لاختبار ان جافا سكريبت تعمل مع سيسس ويجب ان تكون الاكواد التاليه بنفس الترتيب  -->
-  <!-- اولا اخذت مافات بوتستراب وحطتها في المشروع ثم نسخت نص الجاكواري وعملت ملف داخل مجلد جافاسكربت اسمه جاكواريدوت مين دوت جي اس ثم عملت هذا الملف للاختبار ثم رجعت لصفحه بوت ستراب لاخذ منها الاكواد -->
+
+
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -84,8 +84,8 @@ include '../inc_db/db.php';
     }
   </style>
 </head>
-<!-- <body dir="rtl"> -->
-<!-- dir=rtl تجعل الصفحه تبدا من اليمين -->
+
+
 
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary" dir="rtl">
@@ -135,7 +135,7 @@ include '../inc_db/db.php';
     </div>
   </nav>
   <div class="container">
-    <!-- هذا الكونتاينير يمثل الصفحه الاساسيه لا تنسي ان الصفحه مقسمه ل 12 عمود -->
+
     <div class="row">
    <?php
     $sqlm = "select * from items";
@@ -144,10 +144,10 @@ include '../inc_db/db.php';
       echo '      
 
         <div class="col-lg-4 col-sm-12">
-          <!-- كول ما بعدها هو حجم الشاشه و الرقم هو عدد الاعمده الذي سيشغله العنصر في هذه الحاله -->
+
           <div class="moaz">
             <br>
-            <!-- تجعل الاسم يظهر اسفل قليلا-->
+
             <center><P>'.$res['name'].'</P></center>
             <center><img src="../image/'.$res['img'].'" alt="" /></center>
             <hr />
@@ -159,12 +159,12 @@ include '../inc_db/db.php';
         ';
     }
     ?>
-    <!-- كود php هذا مسءول عن اخذ المنتجات من الداتا بيذ وعرضها -->
+
     </div>
     
 </div>
-  <!-- كلك شمال + فورمات دوكيومن +  prettier   لتنظيم الكود-->
-  <!-- اضافه جديده تريك كود سيسس عن طريق الضغط علي كنترول ثم الاسم الخاص بالكلاس -->
+
+
   <footer class="footer" >
     <div class="col-lg-6 col-sm-6">
       <form action="" dir="rtl" method="post">

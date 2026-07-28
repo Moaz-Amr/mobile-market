@@ -19,8 +19,8 @@ if ($_SESSION['user'] != '') {
 <html lang="en">
 
 <head>
-  <!-- هذه الصفحه لاختبار ان جافا سكريبت تعمل مع سيسس ويجب ان تكون الاكواد التاليه بنفس الترتيب  -->
-  <!-- اولا اخذت مافات بوتستراب وحطتها في المشروع ثم نسخت نص الجاكواري وعملت ملف داخل مجلد جافاسكربت اسمه جاكواريدوت مين دوت جي اس ثم عملت هذا الملف للاختبار ثم رجعت لصفحه بوت ستراب لاخذ منها الاكواد -->
+
+
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -144,7 +144,7 @@ if ($_SESSION['user'] != '') {
   </nav>
   <center><h1>عربة التسوق</h1></center>
   <div class="container">
-    <!-- هذا الكونتاينير يمثل الصفحه الاساسيه لا تنسي ان الصفحه مقسمه ل 12 عمود -->
+
     <div class="row">
    <?php
     $sqlm = "SELECT * FROM car JOIN items ON items.id = car.item
@@ -165,7 +165,7 @@ WHERE car.user_id = $user_id";
         ';
     }
     ?>
-    <!-- كود php هذا مسءول عن اخذ المنتجات من الداتا بيذ وعرضها -->
+
     </div>
     </div>
     </body>

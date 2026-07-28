@@ -113,7 +113,7 @@ include '../inc_db/db.php';
         <p class="product-price">السعر: <?php echo htmlspecialchars($row['price']); ?> ريال</p>
         <p class="product-description">الوصف: <?php echo htmlspecialchars($row['descrp']); ?></p>
         <p class="product-category">الفئة: <?php echo htmlspecialchars($row['category']); ?></p>
-        <!-- <a href="car.php?id='.$id.'" class="btn btn-primary btn-buy">اضف الي العربة</a> -->
+
         <a href="car.php?id=<?php echo $id; ?>" class="btn btn-primary btn-buy">اضف الي العربة</a>
       </div>
     </div>
