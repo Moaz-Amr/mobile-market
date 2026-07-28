@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +23,8 @@ include '../inc_db/db.php';
       background-color: dimgrey;
     }
 
-    /* هذا يجعل ال خلفيه سوداء */
-    /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
+
+
     .navbar-brand {
       color: aliceblue;
     }
@@ -43,13 +43,11 @@ include '../inc_db/db.php';
 
     .col-lg-4 {
       margin-top: 20px;
-      /* float:right; */
+
     }
 
     .col-lg-4 img {
-      /* لاحظ ان الصوره داخل كلاس 
-        .col-lg-4 
-        لذا اضفنا img */
+
       background-color: #d4a8d4;
       width: 80%;
       height: 300px;
@@ -79,10 +77,10 @@ include '../inc_db/db.php';
       color: #fbf6f6 !important;
     }
 
-    /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+
     .col-lg-6.col-sm-6 {
       float: right;
-      /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
+
     }
   </style>
 </head>

@@ -1,6 +1,6 @@
 <?php
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 session_start();
 if($_SESSION['isAdmin']==1){
     include '../inc_db/db.php';
@@ -33,8 +33,8 @@ header("Location:admin_login.php");
             background-color: dimgrey;
         }
 
-        /* هذا يجعل ال خلفيه سوداء */
-        /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
+
+
         .navbar-brand {
             color: aliceblue;
         }
@@ -53,13 +53,11 @@ header("Location:admin_login.php");
 
         .col-lg-4 {
             margin-top: 20px;
-            /* float:right; */
+
         }
 
         .col-lg-4 img {
-            /* لاحظ ان الصوره داخل كلاس 
-        .col-lg-4 
-        لذا اضفنا img */
+
             background-color: #d4a8d4;
             width: 80%;
             height: 300px;
@@ -89,10 +87,10 @@ header("Location:admin_login.php");
             color: #fbf6f6 !important;
         }
 
-        /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+
         .col-lg-6.col-sm-6 {
             float: right;
-            /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
+
         }
     </style>
 </head>
@@ -163,7 +161,7 @@ header("Location:admin_login.php");
     if (isset($_POST['send'])) {
 
         $ans = $_POST['ans'];
-        // $query = "INSERT INTO contactus (unser) VALUES ('$ans')";
+
         $query="update contactus set unser='$ans' WHERE  id=$id";
 
         $resultl = mysqli_query($connection, $query);

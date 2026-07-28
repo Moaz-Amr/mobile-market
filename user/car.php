@@ -1,7 +1,7 @@
 <?php
 try{
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 session_start();
 if($_SESSION['user']!=''){
 $username=$_SESSION['user'];

@@ -1,6 +1,6 @@
 <?php
 include'../inc_db/db.php';
-// هذا الكود لربط هذا الملف بملف الربط بالداتا بيز
+
 session_start();
 if($_SESSION['isAdmin']==1){
 echo '';
@@ -37,8 +37,8 @@ header("Location:admin_login.php");
         background-color: dimgrey;
       }
 
-      /* هذا يجعل ال خلفيه سوداء */
-      /* يمكن جلب الكلاس للعناصر مباشرتا من المتصفح عن طريق الضغط علي الزر الايسر علي العنصر المرتد ثم اختيار فحص */
+
+
       .navbar-brand {
         color: aliceblue;
       }
@@ -57,13 +57,11 @@ header("Location:admin_login.php");
 
       .col-lg-4 {
         margin-top: 20px;
-        /* float:right; */
+
       }
 
       .col-lg-4 img {
-        /* لاحظ ان الصوره داخل كلاس 
-        .col-lg-4 
-        لذا اضفنا img */
+
         background-color: #d4a8d4;
         width: 80%;
         height: auto;
@@ -79,10 +77,10 @@ header("Location:admin_login.php");
         width: 100%;
       }
       
-      /* important تعطي للكود اوليه عاليه حتي  وان كان هناك كود عكسه في البوت ستراب */
+
       .col-lg-6.col-sm-6 {
         float: right;
-        /* ستفيد في ان تجعل العناصر تبدا ترتيبها من اليمين */
+
       }
 
       .btn {
